@@ -1,0 +1,265 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+figure {
+  margin: 0;
+}
+
+body {
+  border: 1px solid #413f3f;
+  padding: 1px;
+  max-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.header {
+  padding: 0.35em 0.35em 0.8em;
+  border-bottom: 1px solid #413f3f;
+}
+.header__logo {
+  font-size: 1rem;
+  color: #f1f1f1;
+  background-color: black;
+  text-decoration: none;
+  padding: 0.6em 2em;
+  display: inline-block;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+.main article {
+  flex: 1 0 70%;
+  padding-bottom: 0;
+  padding-right: 1em;
+  padding-left: 1em;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+}
+.main article::-webkit-scrollbar {
+  width: 0;
+}
+.main article h2, .main article h3 {
+  font-weight: 500;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.main aside {
+  flex: 1 0 30%;
+  background: #f1f1f1;
+  padding-top: 1em;
+}
+.main aside > div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.main aside div input {
+  display: none;
+}
+.main aside label[for=back] {
+  display: none;
+}
+.main aside div label {
+  display: flex;
+  text-align: center;
+  font-size: 0.825rem;
+  font-weight: 400;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.3em 0.3em 0.6em;
+}
+.main aside div label object {
+  width: 40%;
+  margin: 0 auto;
+  filter: opacity(0.8);
+  pointer-events: none;
+  flex: 1;
+  margin-bottom: 0.2rem;
+}
+.main aside > div > div {
+  display: none;
+  transition: 0.3s transform ease-in-out;
+  grid-column: span 4;
+  overflow-y: scroll;
+  height: calc(97vh - 0.6em - 2em - 1rem - 0.35em - 0.35em - 0.8em - 0.3em - 0.3em - 0.6em - 0.825rem - 1em);
+  padding: 0.5rem;
+}
+.main aside div input:checked + label {
+  font-weight: 600;
+  border-bottom: solid 2px #8f8b8b;
+}
+.main aside div input:checked + label object {
+  filter: opacity(1);
+}
+.main aside div input#figures:not(:checked) ~ input#references:not(:checked) ~ input#related:not(:checked) ~ input#info:not(:checked) ~ div[data-name=figures],
+.main aside div input#figures:checked ~ div[data-name=figures] {
+  display: block;
+}
+.main aside div input#figures:not(:checked) ~ input#references:not(:checked) ~ input#related:not(:checked) ~ input#info:not(:checked) ~ div[data-name=figures] figure,
+.main aside div input#figures:checked ~ div[data-name=figures] figure {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.main aside div input#figures:not(:checked) ~ input#references:not(:checked) ~ input#related:not(:checked) ~ input#info:not(:checked) ~ div[data-name=figures] figure img,
+.main aside div input#figures:checked ~ div[data-name=figures] figure img {
+  margin-bottom: 0.5rem;
+}
+.main aside div input#figures:not(:checked) ~ input#references:not(:checked) ~ input#related:not(:checked) ~ input#info:not(:checked) ~ div[data-name=figures] figure + figure,
+.main aside div input#figures:checked ~ div[data-name=figures] figure + figure {
+  border-top: 1px solid #979494;
+}
+.main aside div input#related:checked ~ div[data-name=related] {
+  display: block;
+}
+.main aside div input#related:checked ~ div[data-name=related] .related__item + .related__item {
+  margin-top: 1rem;
+}
+.main aside div input#related:checked ~ div[data-name=related] ul {
+  display: grid;
+  gap: 0.75em;
+}
+.main aside div input#related:checked ~ div[data-name=related] ul a, .main aside div input#related:checked ~ div[data-name=related] ul a:visited {
+  color: black;
+}
+.main aside div input#info:checked ~ div[data-name=info] {
+  display: block;
+}
+.main aside div input#info:checked ~ div[data-name=info] .info__item + .info__item {
+  margin-top: 1rem;
+}
+.main aside div input#info:checked ~ div[data-name=info] ul {
+  display: grid;
+  gap: 0.5em;
+}
+.main aside div input#info:checked ~ div[data-name=info] ul a, .main aside div input#info:checked ~ div[data-name=info] ul a:visited {
+  color: black;
+}
+.main aside div input#references:checked ~ div[data-name=references] {
+  display: block;
+}
+.main aside div input#references:checked ~ div[data-name=references] .references__item + .references__item {
+  margin-top: 1rem;
+}
+.main aside div input#references:checked ~ div[data-name=references] ul {
+  display: grid;
+  gap: 0.75em;
+}
+.main aside div input#references:checked ~ div[data-name=references] ul a, .main aside div input#references:checked ~ div[data-name=references] ul a:visited {
+  color: black;
+}
+
+@media screen and (max-width: 700px) {
+  .main {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .main .artical {
+    grid-column: 1/6;
+    grid-row: 1/1;
+    padding-right: 2.152rem;
+  }
+  .main .artical section > h2 {
+    padding-right: 17vw;
+  }
+  .main aside {
+    display: grid;
+    grid-column: 5/6;
+    grid-row: 1/1;
+    background: unset;
+    z-index: 5;
+  }
+  .main aside span {
+    display: none;
+  }
+  .main aside div > label {
+    border-bottom: unset !important;
+  }
+  .main aside div > label[for=back] {
+    display: inline;
+    font-size: 1.3rem;
+    position: fixed;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: 103;
+    margin-bottom: 1rem;
+    transition-delay: 0.3s;
+    transition: opacity 0.3s ease-in-out;
+  }
+  .main aside div > label object {
+    width: 25px;
+    margin-right: unset;
+    margin-left: auto;
+    padding-right: 0.25em;
+  }
+  .main aside div input#figures:not(:checked) ~ input#references:not(:checked) ~ input#related:not(:checked) ~ input#info:not(:checked) ~ label[for=back] {
+    display: none;
+    opacity: 0;
+  }
+  .main aside div input#figures:checked ~ div[data-name=figures] {
+    transform: translateX(0);
+  }
+  .main aside div input#related:checked ~ div[data-name=related] {
+    transform: translateX(0);
+  }
+  .main aside div input#info:checked ~ div[data-name=info] {
+    transform: translateX(0);
+  }
+  .main aside div input#references:checked ~ div[data-name=references] {
+    transform: translateX(0);
+  }
+  .main aside > div {
+    display: unset;
+  }
+  .main aside input ~ div {
+    position: fixed;
+    background: #f1f1f1;
+    display: block;
+    z-index: 101;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    transform: translateX(100%);
+    padding-top: 2.5rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
